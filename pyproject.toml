@@ -1,10 +1,10 @@
 [project]
-name = "python_pdm_template"
+name = "andre-romano.github.io"
 version = "0.1.0"
-description = "Template for Python PDM-based projects"
-authors = [{ name = "None", email = "none@domain.com" }]
-dependencies = []
-requires-python = ">=3.14"
+description = "Andre Romano's personal website built with Python and static site generation tools."
+authors = [{ name = "Andre Madureira", email = "andre.madureira@domain.com" }]
+dependencies = ["mkdocs-material>=9.7.2", "mkdocs<2.0"]
+requires-python = ">=3.13"
 readme = "README.md"
 license-files = ["LICEN[CS]E*", "README.md"]
 classifiers = ["Programming Language :: Python :: 3"]
@@ -24,12 +24,12 @@ build-backend = "pdm.backend"
 [tool.pdm]
 distribution = true
 
-[tool.pdm.build]
-package-dir = "src"
+# [tool.pdm.build]
+# package-dir = "src"
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-addopts = "--cache-clear --ff --cov=src --cov-report=html --cov-report=term --cov-report=xml"
+# [tool.pytest.ini_options]
+# testpaths = ["tests"]
+# addopts = "--cache-clear --ff --cov=src --cov-report=html --cov-report=term --cov-report=xml"
 
 [tool.pyright]
 languageServer = "Pylance"   # Use Pylance como servidor de linguagem
@@ -59,18 +59,18 @@ reportImplicitOverride="error" # method overrides a method in the base class but
 
 # Include files for analysis
 include = [
-    "src",
-    "tests",
+    "**/*.py",
+    # "tests",
 ]
 
 # Exclude files from analysis
 exclude = [
+    "**/node_modules", 
+    "**/.*",
     ".venv",
     "__pycache__",
     "build",
     "dist",
-    ".mypy_cache",
-    ".pytest_cache",
 ]
 
 [tool.ruff.lint]
