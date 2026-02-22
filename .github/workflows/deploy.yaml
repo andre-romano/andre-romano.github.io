@@ -48,4 +48,4 @@ jobs:
         shell: bash
 
       - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
+        run: pdm run mkdocs gh-deploy --force
