@@ -41,4 +41,5 @@ extra:
 nav:
   - Home: index.md
   - Projects: projects.md
+  - Lessons: lessons.md
   - About Me: about.md
